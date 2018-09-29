@@ -165,3 +165,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# My project-related ignores
+/Intro/output.txt
+/Intro/output2.txt
+/Intro/exercise1.txt
