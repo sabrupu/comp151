@@ -17,3 +17,5 @@ if num < 50:
 else:
     print("Greater than 50!")
 
+# String interpolation : f'...{var}...'
+
