@@ -20,7 +20,7 @@ def calc_quot(a, b):
 
 
 def main():
-    print('Calculator:')
+    print('Simple Calculator:')
 
     # Get user input
     print('\nEnter two numbers:')

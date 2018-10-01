@@ -20,6 +20,8 @@ def inches_to_meters(inches):
 
 
 def main():
+    print('Inch Converter\n')
+
     # Get user input
     inches = float(input('Enter the measurement(in inches): '))
 
