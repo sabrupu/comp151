@@ -171,3 +171,4 @@ venv.bak/
 /Intro/output.txt
 /Intro/output2.txt
 /Intro/exercise1.txt
+*.zip
