@@ -11,6 +11,7 @@
 
 
 def get_numbers_sum():
+
     sum = 0
     user_input = int(input('Enter a number: '))
 
@@ -19,6 +20,7 @@ def get_numbers_sum():
         user_input = int(input('Enter a number: '))
 
     return sum
+
 
 def main():
     get_numbers_sum()

@@ -10,7 +10,6 @@ def main():
     # for is used for a set number
     # while is used when we don't know how many times the user will input numbers
 
-
     # Returns a list of numbers
     # 'i' gets set as the first element
     # container of numbers

@@ -31,8 +31,8 @@ def print_evens(start, end):
             print(i)
 
 
-
 def main():
+
     min = int(input('Enter starting value: '))
     max = int(input('Enter ending value: '))
     print_evens(min, max)
