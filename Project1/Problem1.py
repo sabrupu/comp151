@@ -3,11 +3,11 @@
 import random
 
 
-playing_count = 0
+def roll_die():
+    return random.randint(1, 6)
 
 
 def deal():
-    global playing_count
     print('Deal!')
     print('\tRolling dice...')
     die1 = roll_die()
@@ -15,14 +15,10 @@ def deal():
     print(f'\t\tDie #1  =  {die1}')
     print(f'\t\tDie #2  =  {die2}')
     playing_count = (die1 + die2) * 2
+    return playing_count
 
 
-def roll_die():
-    return random.randint(1, 6)
-
-
-def hit():
-    global playing_count
+def hit(playing_count):
     print('Hit!')
     print('\tRolling dice...')
     die1 = roll_die()
@@ -44,20 +40,19 @@ def hit():
         playing_count += die2
     else:
         playing_count += both
+    return playing_count
 
 
 def main():
-    global playing_count
     print('Blackjack\n')
-    deal()
+    playing_count = deal()
     print(f'Initial playing count = {playing_count}\n')
 
     hit_or_stand = input('Type "hit" or "stand": ')
     while hit_or_stand == 'hit':
-        hit()
+        playing_count = hit(playing_count)
         print(f'Playing count = {playing_count}\n')
         hit_or_stand = input('Type "hit" or "stand": ')
-    return
 
 
 main()
