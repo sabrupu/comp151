@@ -43,16 +43,32 @@ def hit(playing_count):
     return playing_count
 
 
+def play_as_player():
+    # Deal
+    playing_count = deal()
+
+    # Loop until player stands or busts
+    while True:
+        # Show playing count
+        print(f'\n\tPlaying count = {playing_count}\n')
+
+        # Check for bust
+        if playing_count > 21:
+            print('Bust!')
+            return -1
+
+        # Hit or stand
+        hit_or_stand = input('Hit or Stand: ')
+        if hit_or_stand == 'hit':
+            playing_count = hit(playing_count)
+        else:
+            print('Stand!')
+            return playing_count
+
+
 def main():
     print('Blackjack\n')
-    playing_count = deal()
-    print(f'Initial playing count = {playing_count}\n')
-
-    hit_or_stand = input('Type "hit" or "stand": ')
-    while hit_or_stand == 'hit':
-        playing_count = hit(playing_count)
-        print(f'Playing count = {playing_count}\n')
-        hit_or_stand = input('Type "hit" or "stand": ')
+    playing_count = play_as_player()
 
 
 main()
