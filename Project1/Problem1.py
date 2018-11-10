@@ -29,7 +29,7 @@ def hit(playing_count):
     if playing_count + both > 21:
         num_choices = 2
     else:
-        print(f'\t\t3. Both dice  =  {both}')
+        print(f'\t\t3. Both    =  {both}')
         num_choices = 3
     choice = 0  # Force while condition to avoid repeated code
     while choice not in range(1, num_choices+1):
