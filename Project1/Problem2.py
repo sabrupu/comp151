@@ -1,26 +1,35 @@
 # Problem 2
 
-def print_pyramid():
-    return
+
+def print_pyramid(n):
+    if n < 1:
+        print('Invalid number.')
+
+    width = (n - 1) * 2 + 1  # pyramid width
+
+    print(f'{1:^{width}}')  # first row differs from pattern
+    for row in range(1, n):
+        row_str = ''
+
+        # Loop through ascending numbers
+        for col in range(0, row + 1):
+            row_str += str(row + col)
+
+        # Loop through descending numbers
+        for col in range(row - 1, -1, -1):
+            row_str += str(row + col)
+
+        # Print row with spacing
+        print(f'{row_str:^{width}}')
 
 
+def main():
+    print('\nPyramid\n')
+
+    n = int(input('Enter number of rows: '))
+    print()
+    print_pyramid(n)
+    print()
 
 
-
-
-
-
-# def print_triangle(n):
-#     for row in range(1, n + 1):
-#         for col in range(1, row + 1):
-#             print(' *', end='')
-#         print()
-#     for row in range(n - 1, 0, -1):
-#         for col in range(1, row + 1):
-#             print(' *', end='')
-#         print()
-#
-# def main():
-#     print_triangle(5)
-#
-# main()
+main()
