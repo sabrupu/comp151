@@ -43,6 +43,13 @@ def hit(playing_count):
     return playing_count
 
 
+def get_hit_or_stand():
+    choice = ''
+    while choice not in ['hit', 'stand']:
+        choice = input('\nHit or Stand: ').lower()
+    return choice
+
+
 def play_as_player():
     # Deal
     playing_count = deal()
@@ -58,8 +65,8 @@ def play_as_player():
             return playing_count
 
         # Hit or stand
-        hit_or_stand = input('\nHit or Stand: ')
-        if hit_or_stand == 'hit':
+        choice = get_hit_or_stand()
+        if choice == 'hit':
             playing_count = hit(playing_count)
         else:
             print('\nStand!')
