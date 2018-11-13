@@ -55,7 +55,7 @@ def play_as_player():
         # Check for bust
         if playing_count > 21:
             print('Bust!')
-            return -1
+            return playing_count
 
         # Hit or stand
         hit_or_stand = input('Hit or Stand: ')
@@ -66,9 +66,36 @@ def play_as_player():
             return playing_count
 
 
+def play_as_dealer(playing_count_player):
+    # Deal
+    playing_count = deal()
+
+    # Loop until dealer stands or busts
+    while True:
+        # Show playing count
+        print(f'\n\tPlaying count = {playing_count}\n')
+
+        # Check for bust
+        if playing_count > 21:
+            print('Bust!')
+            return playing_count
+
+        # Hit or stand
+        if playing_count <= playing_count_player and playing_count <= 17:
+            print('Hit!')
+            print('\tRolling die...')
+            die = roll_die()
+            print(f'Die  =  {die}')
+            playing_count += die
+        else:
+            print('Stand!')
+            return playing_count
+
+
 def main():
     print('Blackjack\n')
-    playing_count = play_as_player()
+    playing_count_player = play_as_player()
+    playing_count_dealer = play_as_dealer(playing_count_player)
 
 
 main()
