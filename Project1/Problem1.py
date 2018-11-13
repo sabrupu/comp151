@@ -8,7 +8,7 @@ def roll_die():
 
 
 def deal():
-    print('Deal!')
+    print('\nDeal!')
     print('\tRolling dice...')
     die1 = roll_die()
     die2 = roll_die()
@@ -19,7 +19,7 @@ def deal():
 
 
 def hit(playing_count):
-    print('Hit!')
+    print('\nHit!')
     print('\tRolling dice...')
     die1 = roll_die()
     die2 = roll_die()
@@ -50,19 +50,19 @@ def play_as_player():
     # Loop until player stands or busts
     while True:
         # Show playing count
-        print(f'\n\tPlaying count = {playing_count}\n')
+        print(f'\n\tPlaying count = {playing_count}')
 
         # Check for bust
         if playing_count > 21:
-            print('Bust!')
+            print('\nBust!')
             return playing_count
 
         # Hit or stand
-        hit_or_stand = input('Hit or Stand: ')
+        hit_or_stand = input('\nHit or Stand: ')
         if hit_or_stand == 'hit':
             playing_count = hit(playing_count)
         else:
-            print('Stand!')
+            print('\nStand!')
             return playing_count
 
 
@@ -73,29 +73,47 @@ def play_as_dealer(playing_count_player):
     # Loop until dealer stands or busts
     while True:
         # Show playing count
-        print(f'\n\tPlaying count = {playing_count}\n')
+        print(f'\n\tPlaying count = {playing_count}')
 
         # Check for bust
         if playing_count > 21:
-            print('Bust!')
+            print('\nBust!')
             return playing_count
 
         # Hit or stand
         if playing_count <= playing_count_player and playing_count <= 17:
-            print('Hit!')
+            print('\nHit!')
             print('\tRolling die...')
             die = roll_die()
-            print(f'Die  =  {die}')
+            print(f'\t\tDie  =  {die}')
             playing_count += die
         else:
-            print('Stand!')
+            print('\nStand!')
             return playing_count
 
 
 def main():
-    print('Blackjack\n')
+    print('Blackjack')
+
+    # Player's turn
     playing_count_player = play_as_player()
-    playing_count_dealer = play_as_dealer(playing_count_player)
+
+    if playing_count_player > 21:
+        result = 'Dealer wins!'
+    else:
+        # Dealer's turn
+        playing_count_dealer = play_as_dealer(playing_count_player)
+
+        if playing_count_dealer > 21:
+            result = 'Player wins!'
+        elif playing_count_dealer < playing_count_player:
+            result = 'Player wins!'
+        elif playing_count_dealer > playing_count_player:
+            result = 'Dealer wins!'
+        else:
+            result = 'Tie!'
+
+    print(f'\n{result}')
 
 
 main()
