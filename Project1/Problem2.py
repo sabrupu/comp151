@@ -13,11 +13,11 @@ def print_pyramid(n):
 
         # Loop through ascending numbers
         for col in range(0, row + 1):
-            row_str += str(row + col)
+            row_str += str((row + col) % 10)
 
         # Loop through descending numbers
         for col in range(row - 1, -1, -1):
-            row_str += str(row + col)
+            row_str += str((row + col) % 10)
 
         # Print row with spacing
         print(f'{row_str:^{width}}')
