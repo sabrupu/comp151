@@ -30,8 +30,22 @@ def get_coords():
                 return [row, col]
 
 
-def check_winner(player_sym):
-    pass
+def is_winner(player):
+    # Check rows for winner
+    for row in range(3):
+        if board[row][0] == board[row][1] == board[row][2] == player:
+            return True
+    # Check columns for winner
+    for col in range(3):
+        if board[0][col] == board[1][col] == board[2][col] == player:
+            return True
+    # Check diagonals for winner
+    if board[0][0] == board[1][1] == board[2][2] == player:
+        return True
+    if board[2][0] == board[1][1] == board[0][2] == player:
+        return True
+
+    return False
 
 
 def main():
@@ -40,13 +54,16 @@ def main():
     print_board()
 
     keep_playing = True
-
     while keep_playing:
-        for sym in 'XO':
-            print(f'{sym}\'s turn')
+        for player in 'XO':
+            print(f'{player}\'s turn')
             [row, col] = get_coords()
-            board[row][col] = sym
+            board[row][col] = player
             print_board()
+            if is_winner(player):
+                print(f'{player} won!')
+                keep_playing = False
+                break
 
 
 main()
