@@ -7,7 +7,7 @@
 #               [2, 0] [2, 1] [2, 2]
 
 
-board = 3 * [3 * [' ']]
+board = [[' '] * 3 for _ in range(3)]  # create 3 separate lists of 3 elements
 
 
 def print_board():
@@ -37,6 +37,8 @@ def check_winner(player_sym):
 def main():
     print('Game of Tic-Tac-Toe\n')
 
+    print_board()
+
     keep_playing = True
 
     while keep_playing:
@@ -44,6 +46,7 @@ def main():
             print(f'{sym}\'s turn')
             [row, col] = get_coords()
             board[row][col] = sym
+            print_board()
 
 
 main()
