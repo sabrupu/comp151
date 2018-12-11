@@ -11,10 +11,13 @@ board = [[' '] * 3 for _ in range(3)]  # create 3 separate lists of 3 elements
 
 
 def print_board():
-    for row in board:
-        for space in row:
-            print(space, end=' ')
-        print()
+    print()
+    print(f' {board[0][0]} | {board[0][1]} | {board[0][2]}')
+    print('---+---+---')
+    print(f' {board[1][0]} | {board[1][1]} | {board[1][2]}')
+    print('---+---+---')
+    print(f' {board[2][0]} | {board[2][1]} | {board[2][2]}')
+    print()
 
 
 def get_coords():
@@ -22,10 +25,12 @@ def get_coords():
     while True:
         coords = input('Enter coordinates: ').split(' ')
 
-        if len(coords) == 2:
+        # Only proceed if there are exactly two coordinates
+        if len(coords) == 2 and coords[0].isdigit() and coords[1].isdigit():
             row = int(coords[0])
             col = int(coords[1])
 
+            # Check that the coordinates are on the board
             if 0 <= row < 3 and 0 <= col < 3 and board[row][col] == ' ':
                 return [row, col]
 
