@@ -21,7 +21,17 @@ def calculate_grade_book_average(grade_book):
 
 # Function that returns the average of all grades across all subjects
 def calculate_student_average(grade_book, student):
+    num_subjects = len(grade_book[0])
+    num_grades   = len(grade_book[0][0])
+
     average = 0
+    for subject in range(num_subjects):
+        grades = grade_book[student][subject]
+        average += sum(grades)
+
+    total_num_grades = num_subjects * num_grades
+    average /= total_num_grades
+
     return average
 
 
@@ -29,6 +39,10 @@ def calculate_student_average(grade_book, student):
 def calculate_subject_average(grade_book, subject):
     average = 0
     return average
+
+
+def natural_round(n):
+    return int(n + 0.5)
 
 
 def main():
@@ -69,9 +83,9 @@ def main():
     student_average = calculate_student_average(grade_book, selected_student - 1)
     subject_average = calculate_subject_average(grade_book, selected_subject - 1)
 
-    print(f"Grade book Average: {grade_book_average}")
-    print(f"Student {selected_student} Average: {student_average}")
-    print(f"Subject {selected_subject} Average: {subject_average}")
+    print(f"Grade book Average: {natural_round(grade_book_average)}")
+    print(f"Student {selected_student} Average: {natural_round(student_average)}")
+    print(f"Subject {selected_subject} Average: {natural_round(subject_average)}")
 
 
 main()
