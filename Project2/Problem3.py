@@ -29,6 +29,8 @@ def swap(string, a, b):
 
 
 def main():
+    print('Project 2, Problem 3\n')
+
     string = ['A', 'B', 'C']
     compute_permutations(string, 0)
 
