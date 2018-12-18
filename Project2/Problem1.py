@@ -17,6 +17,8 @@ def calculate_subject_average():
 
 
 def main():
+    print('Project 2, Problem 1\n')
+
     # 3x2x4 array
     grade_book = [
         # Student 1: Avg = 92.5
@@ -45,6 +47,7 @@ def main():
 
     selected_student = int(input("Which student's average do you want to see?\nEnter 1, 2, 3: "))
     selected_subject = int(input("Which subject's average do you want to see?\nEnter 1, 2: "))
+    print()
 
     # For each of the functions below, add the correct number of arguments!
     grade_book_average = calculate_grade_book_average()
