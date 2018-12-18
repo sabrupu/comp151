@@ -3,7 +3,19 @@ import math
 
 # Function that returns the average of all grades, across all subjects, of all students
 def calculate_grade_book_average(grade_book):
+    num_students = len(grade_book)
+    num_subjects = len(grade_book[0])
+    num_grades   = len(grade_book[0][0])
+
     average = 0
+    for student in range(num_students):
+        for subject in range(num_subjects):
+            grades = grade_book[student][subject]
+            average += sum(grades)
+
+    total_num_grades = num_students * num_subjects * num_grades
+    average /= total_num_grades
+
     return average
 
 
