@@ -3,12 +3,11 @@
 # Running this function with n = 10 should return 140,375
 
 
-# End condition
 def sum_powers(n):
+    # Check for end condition
     if n == 1:
         return (-1) ** 3
 
-    # Decrementing by 1 until n = 1
     if n % 2 == 0:
         power = n ** 5
     else:
@@ -18,6 +17,8 @@ def sum_powers(n):
 
 
 def main():
+    print('Project 2, Problem 2\n')
+
     n = int(input('Enter a number: '))
     print(f'sum = {sum_powers(n):,}')
 
