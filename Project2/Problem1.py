@@ -52,7 +52,7 @@ def calculate_subject_average(grade_book, subject):
 
 
 def natural_round(n):
-    return int(n + 0.5)
+    return math.floor(n + 0.5)
 
 
 def main():
