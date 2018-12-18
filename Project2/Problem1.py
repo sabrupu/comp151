@@ -37,7 +37,17 @@ def calculate_student_average(grade_book, student):
 
 # Function that will return the average of all grades across a single subject from all students
 def calculate_subject_average(grade_book, subject):
+    num_students = len(grade_book)
+    num_grades   = len(grade_book[0][0])
+
     average = 0
+    for student in range(num_students):
+        grades = grade_book[student][subject]
+        average += sum(grades)
+
+    total_num_grades = num_students * num_grades
+    average /= total_num_grades
+
     return average
 
 
