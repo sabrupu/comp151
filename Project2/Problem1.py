@@ -1,5 +1,21 @@
 import math
 
+
+# Function that returns the average of all grades, across all subjects, of all students
+def calculate_grade_book_average():
+    average = 0
+
+
+# Function that returns the average of all grades across all subjects
+def calculate_student_average():
+    average = 0
+
+
+# Function that will return the average of all grades across a single subject from all students
+def calculate_subject_average():
+    average = 0
+
+
 def main():
     # 3x2x4 array
     grade_book = [
@@ -38,24 +54,6 @@ def main():
     print(f"Grade book Average: {grade_book_average}")
     print(f"Student {selected_student} Average: {student_average}")
     print(f"Subject {selected_subject} Average: {subject_average}")
-
-
-# Function that returns the average of all grades, across all subjects, of all students
-def calculate_grade_book_average():
-    average = 0
-
-
-# Function that returns the average of all grades across all subjects
-def calculate_student_average():
-    average = 0
-
-
-
-# Function that will return the average of all grades across a single subject from all students
-def calculate_subject_average():
-    average = 0
-
-
 
 
 main()
