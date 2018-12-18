@@ -58,6 +58,7 @@ def main():
 
     print_board()
 
+    turns = 0
     keep_playing = True
     while keep_playing:
         for player in 'XO':
@@ -65,8 +66,15 @@ def main():
             [row, col] = get_coords()
             board[row][col] = player
             print_board()
+
             if is_winner(player):
                 print(f'{player} won!')
+                keep_playing = False
+                break
+
+            turns += 1
+            if turns == 9:
+                print('Draw!')
                 keep_playing = False
                 break
 

@@ -16,6 +16,10 @@
 # Note that it is quite possible that you will see some fortunes more than once while not
 # seeing some at all.
 
+# Each word is the key, its value is the count
+# {"the" : 0, "and" : 0}
+# if entry["number"] = search for value
+# convert everything to lower as well as the user input
 
 import random
 
